@@ -1,0 +1,73 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+<body>
+    <div class="glow-container">
+        <div class="glow"></div>
+        <div class="glow"></div>
+        <div class="glow"></div>
+    </div>
+
+    <div class="auth-container" id="signupContainer">
+        <div class="auth-header">
+            <h2>Create Account</h2>
+            <p>Join us today!</p>
+        </div>
+        
+        <form id="signupForm">
+            <div class="form-group floating">
+                <input type="text" id="signupUsername" class="form-control" placeholder=" " required>
+                <label for="signupUsername">Username</label>
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="form-group floating">
+                <input type="email" id="signupEmail" class="form-control" placeholder=" " required>
+                <label for="signupEmail">Email</label>
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="form-group floating">
+                <input type="password" id="signupPassword" class="form-control" placeholder=" " required>
+                <label for="signupPassword">Password</label>
+                <div class="password-strength">
+                    <div class="strength-bar"></div>
+                </div>
+            </div>
+            
+            <div class="form-group floating">
+                <input type="password" id="signupConfirm" class="form-control" placeholder=" " required>
+                <label for="signupConfirm">Confirm Password</label>
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="form-group checkbox">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms of Service</a></label>
+            </div>
+            
+            <button type="submit" class="btn-auth">
+                <span class="btn-text">Sign Up</span>
+                <div class="loader">
+                    <div class="loader-dot"></div>
+                    <div class="loader-dot"></div>
+                    <div class="loader-dot"></div>
+                </div>
+            </button>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="{% url 'login'%}">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

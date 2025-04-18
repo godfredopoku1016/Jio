@@ -1,0 +1,49 @@
+{% extends './base.html' %}
+{% load static%}
+
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+<div class="container my-5">
+  <div class="text-center">
+    <h1 style="color: silver;font-size: 5vw;" > <span >Hello</span> <span>Welcome!</span>  <span> Back To </span><br> <span style="color: silver;font-size: 4vw";>AuthShield </span><br></h1><br>
+<div class="img center">
+  <img src="/static/public/Designer_9_-removebg-preview.png"  alt="">
+  <div class="info" style="margin: auto;width:45%">
+    <span>Please log in to access your account. Enter your credentials to securely connect with your personalized dashboard and enjoy our services. If you don't have an account yet, you can easily create one by clicking the "Sign Up" button. Your security is our top priority, so make sure to use a strong password and keep your login information private.</span>
+  </div>
+</div><br>
+  <br><br>
+  </div><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h1 class="card-title text-center">AuthShield &#128737</h1>
+          <h3 class="card-subtitle mb-4 text-center">Login</h3>
+          <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary" style="width: 60%;">Submit</button>
+            </div>
+          </form>
+          <div class="text-center mt-3">
+            {% comment %} <a class="signup-link" href="{% url 'main:authView' %}">Signup</a> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+
+
+
+{% endblock content %}
